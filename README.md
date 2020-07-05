@@ -3,7 +3,7 @@
 ## Overview:
 This repo contains two files part 1 and part 2 for the Egis online test.<br />
 The code was progammed in Java with JDK 8 on a windows 10 machine.<br />
-The idea used was Inetllij Idea 
+The IDE used was Inetllij Idea 
 
 ## Pat1
 Part1 contains three java classes Text,Utils and Is and no 3rd party libraries are used.<br />
@@ -14,12 +14,12 @@ Text:
  * stringToFloat
  * dateToString
  * stringToDate<br/>
- Is: 
+ Is: <br />
   *  email
   *  isInt
   *  isDouble
   *  isobjEmpty<br />
-Utils:
+Utils:<br />
   * dateBaseSafe
   * split
   * capFirstChar
