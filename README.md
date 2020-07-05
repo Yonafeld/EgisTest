@@ -13,17 +13,17 @@ Text:
  * stringToDouble
  * stringToFloat
  * dateToString
- * stringToDate<br />
-Is: 
-*  email
-*  isInt
-*  isDouble
-*  isobjEmpty<br />
+ * stringToDate<br/>
+ Is: 
+  *  email
+  *  isInt
+  *  isDouble
+  *  isobjEmpty<br />
 Utils:
-* dateBaseSafe
-* split
-* capFirstChar
-* uniqueWords
+  * dateBaseSafe
+  * split
+  * capFirstChar
+  * uniqueWords
 
 ## Pat2
 Part2 uses two third party libraries, jsoup and gson (found in lib folder)<br />
