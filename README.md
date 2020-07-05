@@ -13,12 +13,12 @@ Text:
  * stringToDouble
  * stringToFloat
  * dateToString
- * stringToDate
+ * stringToDate<br />
 Is: 
 *  email
 *  isInt
 *  isDouble
-*  isobjEmpty
+*  isobjEmpty<br />
 Utils:
 * dateBaseSafe
 * split
