@@ -14,11 +14,13 @@ Text:
  * stringToFloat
  * dateToString
  * stringToDate<br/>
+ 
  Is: <br />
   *  email
   *  isInt
   *  isDouble
   *  isobjEmpty<br />
+  
 Utils:<br />
   * dateBaseSafe
   * split
@@ -27,4 +29,5 @@ Utils:<br />
 
 ## Pat2
 Part2 uses two third party libraries, jsoup and gson (found in lib folder)<br />
-In order to read in data from a url and stdout it in Json format
+In order to read in data from a url(https://github.com/egis/handbook/blob/master/Tech-Stack.md)<br />
+and stdout it in JSON format the list of technologies by area (Programming Stack, Build Stack, Infrastructure)
