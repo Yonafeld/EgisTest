@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import java.util.Calendar;
 import java.util.Date;
 
-public class testNG {
+public class TestNG {
 
     @Test
     void TestJoinStrings()
