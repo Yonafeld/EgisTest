@@ -60,23 +60,23 @@ public class Utils {
 
     }
 
-    static String[] UniqueWords(String WordEntered){
+    static String[] UniqueWords(String SentenceEntered){
         int ArraySize=1;
-        for(int i=0; i<WordEntered.length();i++){
-           if(WordEntered.charAt(i)==' ')
+        for(int i=0; i<SentenceEntered.length();i++){
+           if(SentenceEntered.charAt(i)==' ')
                 ArraySize+=1;
         }
 
         String [] NotUniqueWords= new String[ArraySize];
         String temp="";
         int j=0;
-        for(int i=0; i<WordEntered.length();i++){
-            if(WordEntered.charAt(i)==' '){
+        for(int i=0; i<SentenceEntered.length();i++){
+            if(SentenceEntered.charAt(i)==' '){
                 NotUniqueWords[j]=temp.trim();
                 temp="";
                 j++;
             }
-            temp+=WordEntered.charAt(i);
+            temp+=SentenceEntered.charAt(i);
         }
         NotUniqueWords[j]=temp.trim();
 
