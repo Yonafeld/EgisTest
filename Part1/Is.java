@@ -17,7 +17,6 @@ public class Is {
 
     static  boolean IsInt(double ValueToCheck){
         boolean verification =false;
-        String ValueFormatted=String.valueOf(ValueToCheck);
         if(ValueToCheck==(int)ValueToCheck && ValueToCheck<Integer.MAX_VALUE&& ValueToCheck>Integer.MIN_VALUE){
             verification=true;
         }
