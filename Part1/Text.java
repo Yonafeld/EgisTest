@@ -5,34 +5,34 @@ import java.util.Date;
 
 public class Text {
 
-    static String joinStrings(String [] inputStringArray){
-        String result="";
-        for (String i:inputStringArray){
-            result+=i;
+    static String JoinStrings(String [] InputArrayOfWords){
+        String ConcatenatedWord="";
+        for (String i:InputArrayOfWords){
+            ConcatenatedWord+=i;
         }
-        return result;
+        return ConcatenatedWord;
     }
 
-    static Integer stringToInt(String input){
-        return Integer.parseInt(input.trim());
+    static Integer StringToInt(String value){
+        return Integer.parseInt(value.trim());
     }
 
-    static Double stringToDouble(String input){
-        return Double.parseDouble(input.trim());
+    static Double StringToDouble(String value){
+        return Double.parseDouble(value.trim());
     }
 
-    static Float stringToFloat(String input){
-        return Float.parseFloat(input.trim());
+    static Float StringToFloat(String value){
+        return Float.parseFloat(value.trim());
     }
 
-    static String dateToString(Date date) {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
-        return dateFormat.format(date);
+    static String DateToString(Date OldDate) {
+        DateFormat FormatDateToForm = new SimpleDateFormat("yyyy-mm-dd");
+        return FormatDateToForm.format(OldDate);
     }
 
-    static LocalDate stringToDate(String date) {
-        LocalDate newDate = LocalDate.parse(date);
-        return newDate;
+    static LocalDate StringToDate(String OldDate) {
+        LocalDate FormatDateToForm = LocalDate.parse(OldDate);
+        return FormatDateToForm;
     }
 
 }
