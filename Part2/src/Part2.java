@@ -12,42 +12,42 @@ public class Part2
 {
     public static void main(String[] args)
     {
-        String docInHtml  = getUrlContents("https://github.com/egis/handbook/blob/master/Tech-Stack.md");
+        String DocumentInHtml  = GetUrlContents("https://github.com/egis/handbook/blob/master/Tech-Stack.md");
 
-        String HTMLSTring=docInHtml;
-        Document html = Jsoup.parse(HTMLSTring);
-        HashMap<String, String> resultsMap = new HashMap<String, String>();
-        resultsMap=getRelevantData(html);
+        String HTMLToBePassed=DocumentInHtml;
+        Document HTMLData = Jsoup.parse(HTMLToBePassed);
+        HashMap<String, String> ResultsMap = new HashMap<String, String>();
+        ResultsMap=GetRelevantData(HTMLData);
 
         Gson gson = new Gson();
-        String resultJson = gson.toJson(resultsMap);
-        System.out.println(resultJson);
+        String DataInJsonFormat = gson.toJson(ResultsMap);
+        System.out.println(DataInJsonFormat);
 
     }
 
-    private static String getUrlContents(String urlWebsite)
+    private static String GetUrlContents(String URLWebsite)
     {
-        StringBuilder urlContent = new StringBuilder();
+        StringBuilder WebPageContent = new StringBuilder();
         try
         {
-            URL url = new URL(urlWebsite);
-            URLConnection urlConnection = url.openConnection();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+            URL url = new URL(URLWebsite);
+            URLConnection Connection = url.openConnection();
+            BufferedReader BufferedReader = new BufferedReader(new InputStreamReader(Connection.getInputStream()));
             String line;
-            while ((line = bufferedReader.readLine()) != null)
+            while ((line = BufferedReader.readLine()) != null)
             {
-                urlContent.append(line + "\n");
+                WebPageContent.append(line + "\n");
             }
-            bufferedReader.close();
+            BufferedReader.close();
         }
         catch(Exception e)
         {
             e.printStackTrace();
         }
-        return urlContent.toString();
+        return WebPageContent.toString();
     }
 
-    private static  HashMap<String, String> getRelevantData(Document html){
+    private static  HashMap<String, String> GetRelevantData(Document html){
         HashMap<String, String> result= new HashMap<String, String>();
         String Area="";
         int start=0;
