@@ -1,43 +1,95 @@
+import java.util.List;
+
 public class Is {
 
-    static boolean email(String userEmail){
+    static boolean IsEmail(String userEmailEntered){
         boolean verification =false;
-        if (userEmail==null || userEmail.isEmpty()){
+        if (userEmailEntered==null || userEmailEntered.isEmpty()){
             return verification;
         }
 
-        if (userEmail.indexOf('@')!=-1 &&userEmail.indexOf('.')!=-1){
+        if (userEmailEntered.indexOf('@')!=-1 &&userEmailEntered.indexOf('.')!=-1){
             verification=true;
         }
 
         return verification;
     }
 
-    static  boolean isInt(double x){
+    static  boolean IsInt(double ValueToCheck){
         boolean verification =false;
-        String intAsaString=String.valueOf(x);
-        if(x==(int)x && x<Integer.MAX_VALUE&& x>Integer.MIN_VALUE && intAsaString.indexOf(".")==-1){
+        String ValueFormatted=String.valueOf(ValueToCheck);
+        if(ValueToCheck==(int)ValueToCheck && ValueToCheck<Integer.MAX_VALUE&& ValueToCheck>Integer.MIN_VALUE && ValueFormatted.indexOf(".")==-1){
             verification=true;
         }
         return  verification;
     }
 
-    static  boolean isDouble(double x){
+    static  boolean IsDouble(double ValueToCheck){
         boolean verification =false;
-        String doubleAsaString=String.valueOf(x);
-        if((x!=(int)x&& x<Double.MAX_VALUE&& x>Double.MIN_VALUE) ||
-                (doubleAsaString.indexOf(".")!=-1 && x<Double.MAX_VALUE&& x>Double.MIN_VALUE)){
+        String ValueFormatted=String.valueOf(ValueToCheck);
+        if((ValueToCheck!=(int)ValueToCheck&& ValueToCheck<Double.MAX_VALUE&& ValueToCheck>Double.MIN_VALUE) ||
+                (ValueFormatted.indexOf(".")!=-1 && ValueToCheck<Double.MAX_VALUE&& ValueToCheck>Double.MIN_VALUE)){
             verification=true;
         }
         return  verification;
     }
 
-    static boolean isobjEmpty(Object x){
-        if(x == null|| x=="") {
+    static boolean IsObjEmpty(String Value){
+        if(Value == null|| Value=="") {
             return true;
         }
         return false;
     }
+
+    static boolean IsObjEmpty(String [] Value){
+        if(Value == null|| Value.length==0) {
+            return true;
+        }
+        return false;
+    }
+
+    static boolean IsObjEmpty(Integer Value){
+        if(Value == null) {
+            return true;
+        }
+        return false;
+    }
+
+    static boolean IsObjEmpty(Integer [] Value){
+        if(Value == null|| Value.length==0) {
+            return true;
+        }
+        return false;
+    }
+
+    static boolean IsObjEmpty(Character Value){
+        if(Value == null) {
+            return true;
+        }
+        return false;
+    }
+
+    static boolean IsObjEmpty(Character [] Value){
+        if(Value == null|| Value.length==0) {
+            return true;
+        }
+        return false;
+    }
+
+    static boolean IsObjEmpty(List<String> Value){
+        if(Value == null) {
+            return true;
+        }
+        if(Value.isEmpty()) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+
+
 
 
 }

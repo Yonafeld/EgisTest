@@ -1,125 +1,125 @@
 public class Utils {
 
-    static String dateBaseSafe(String name){
+    static String DateBaseSafeName(String nameEntered){
+        char[] NameAsArray = nameEntered.toCharArray();
+        char [] ArrayForNewName=new char[nameEntered.length()];
         int j=0;
-        char[] Namechars = name.toCharArray();
-        char [] newArray=new char[name.length()];
-        for (char c : Namechars) {
-            if(Character.isLetter(c)&& !Character.isWhitespace(c)){
-                newArray[j]=c;
+        for (char i : NameAsArray) {
+            if(Character.isLetter(i)&& !Character.isWhitespace(i)){
+                ArrayForNewName[j]=i;
             }
-            if(Character.isWhitespace(c)){
-                newArray[j]='_';
+            if(Character.isWhitespace(i)){
+                ArrayForNewName[j]='_';
             }
             j++;
         }
-        String newName = new String(newArray);
-        return newName.trim();
+        String NameForDataBase = new String(ArrayForNewName);
+        return NameForDataBase.trim();
     }
 
-    static  String [] split(String input,String split1,String split2,String split3) {
-        char c1=split1.charAt(0);
-        char c2=split2.charAt(0);
-        char c3=split3.charAt(0);
-        char[] inputChars = input.toCharArray();
-        char [] newArray=new char[input.length()];
+    static  String [] split(String sentenceToSplit,String parameter1,String parameter2,String parameter3) {
+        char split1=parameter1.charAt(0);
+        char split2=parameter2.charAt(0);
+        char split3=parameter3.charAt(0);
+        char[] InputAsArray = sentenceToSplit.toCharArray();
+        char [] ArrayForSplit=new char[sentenceToSplit.length()];
         int j=0;
-        for (char c : inputChars) {
-            if(c==c1 || c==c2 || c==c3){
-                newArray[j]=' ';
-
+        for (char i : InputAsArray) {
+            if(i==split1 || i==split2 || i==split3){
+                ArrayForSplit[j]=' ';
             }
-            else{ newArray[j]=c; }
+            else{ ArrayForSplit[j]=i; }
             j++;
         }
-        int sizeOfOutput=1;
-        for (char i: newArray){
+
+        int SizeOfOutput=1;
+        for (char i: ArrayForSplit){
             if (Character.isWhitespace(i))
             {
-                sizeOfOutput+=1;
+                SizeOfOutput+=1;
             }
         }
-        String [] finalStringArray= new String[sizeOfOutput];
+        String [] FinalArrayOfWords= new String[SizeOfOutput];
          j=0;
         String temp="";
-        for (char c : newArray) {
-            if (Character.isWhitespace(c)) {
-                finalStringArray[j] = temp.trim();
+        for (char i : ArrayForSplit) {
+            if (Character.isWhitespace(i)) {
+                FinalArrayOfWords[j] = temp.trim();
                 j++;
                 temp="";
             }
-            temp+=c;
+            temp+=i;
         }
-        finalStringArray[j]=temp.trim();
-
-        return  finalStringArray;
+        FinalArrayOfWords[j]=temp.trim();
+        return  FinalArrayOfWords;
 
     }
 
-    static String  capFirstChar(String input){
-        return  input.substring(0, 1).toUpperCase() + input.substring(1);
+    static String  CapFirstChar(String InputEntered){
+        return  InputEntered.substring(0, 1).toUpperCase() + InputEntered.substring(1);
 
     }
 
-    static String[] uniqueWords(String input){
-        int arraySize=1;
-        for(int i=0; i<input.length();i++){
-           if(input.charAt(i)==' ')
-                arraySize+=1;
+    static String[] UniqueWords(String WordEntered){
+        int ArraySize=1;
+        for(int i=0; i<WordEntered.length();i++){
+           if(WordEntered.charAt(i)==' ')
+                ArraySize+=1;
         }
 
-        String [] notUniqueArray= new String[arraySize];
+        String [] NotUniqueWords= new String[ArraySize];
         String temp="";
         int j=0;
-        for(int i=0; i<input.length();i++){
-            if(input.charAt(i)==' '){
-                notUniqueArray[j]=temp.trim();
+        for(int i=0; i<WordEntered.length();i++){
+            if(WordEntered.charAt(i)==' '){
+                NotUniqueWords[j]=temp.trim();
                 temp="";
                 j++;
             }
-            temp+=input.charAt(i);
+            temp+=WordEntered.charAt(i);
         }
-        notUniqueArray[j]=temp.trim();
-        String [] uniqueArray={ };
-        String [] oldArr;
-        oldArr=notUniqueArray;
+        NotUniqueWords[j]=temp.trim();
+
+        String [] UniqueArrayOfWords={ };
+        String [] PreviousArrary;
+        PreviousArrary=NotUniqueWords;
 
         // I know there is a Java function to remove duplicates however
         // I tried to minimize the use of java 8 classes for this exercise
-        for(int i=0;i<notUniqueArray.length;i++){
-            uniqueArray =removeDuplicates(oldArr,notUniqueArray[i]);
-            oldArr=uniqueArray;
+        for(int i=0;i<NotUniqueWords.length;i++){
+            UniqueArrayOfWords=RemoveDuplicates(PreviousArrary,NotUniqueWords[i]);
+            PreviousArrary=UniqueArrayOfWords;
         }
 
-        return uniqueArray;
+        return UniqueArrayOfWords;
 
     }
 
 // Function to remove duplicates for uniqueWords
-    static String [] removeDuplicates(String[] oldArr, String word){
+    static String [] RemoveDuplicates(String[] PreviousArrary, String word){
         int duplicate=0;
-        for(int i=0;i<oldArr.length;i++){
-            if(oldArr[i].equals(word)){
+        for(int i=0;i<PreviousArrary.length;i++){
+            if(PreviousArrary[i].equals(word)){
                 duplicate+=1;
             }
         }
 
         if (duplicate <=1){
-            return  oldArr;
+            return  PreviousArrary;
         }
-        String[] newArr=new String[(oldArr.length-duplicate+1)];
+        String[] UniqueArray=new String[(PreviousArrary.length-duplicate+1)];
         boolean wordAlreadyAdded=false;
         int j=0;
-        for(int i=0;i<oldArr.length;i++){
-            if(oldArr[i].equals(word)==false|| wordAlreadyAdded==false){
-                newArr[j]=oldArr[i];
+        for(int i=0;i<PreviousArrary.length;i++){
+            if(PreviousArrary[i].equals(word)==false|| wordAlreadyAdded==false){
+                UniqueArray[j]=PreviousArrary[i];
                 j+=1;
-                if(oldArr[i].equals(word))
+                if(PreviousArrary[i].equals(word))
                     wordAlreadyAdded=true;
             }
         }
 
-        return newArr;
+        return UniqueArray;
 
     }
 
